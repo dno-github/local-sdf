@@ -1,0 +1,27 @@
+- name: run script and fetch results
+  hosts: '{{ hosts }}'
+
+  tasks:
+  - name: script command
+    script: '{{ xscript }}'
+    register: scrpt_results
+    ignore_errors: true
+    args:
+
+  - name: to get correct (stderr/stdout/msg) output msg
+    set_fact:
+      scrpt_out: "{{  scrpt_results.stderr | default( scrpt_results.stdout )| default(\
+        \ scrpt_results.msg )| default('stderr,stdout.msg NOT present in the output')\
+        \ }}"
+  - name: setting json str
+    set_fact:
+      json_str: "{ 'host_name': '{{ ansible_facts.hostname}}', 'rc': '{{ scrpt_results.rc\
+        \ | default(1) }}', 'err': '{{ scrpt_out | regex_replace('\\s\\s+','')| regex_replace('\n\
+        ','') | regex_replace(\"'\",'')}}' }"
+  - name: copy to shell results to a json file
+    copy:
+      content: "{{ ansible_play_hosts | map('extract', hostvars, 'json_str') | list\
+        \ | to_nice_json }}"
+      dest: ./{{ 'script-results-' + uuid }}.json
+    run_once: true
+    delegate_to: localhost

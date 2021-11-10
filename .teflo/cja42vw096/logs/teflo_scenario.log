@@ -1,0 +1,225 @@
+2021-11-09 21:08:00,673 WARNING [teflo.teflo.__init__:199] Scenario workspace was not set, therefore the workspace is automatically assigned to the current working directory. You may experience problems if files needed by teflo do not exists in the scenario workspace.
+2021-11-09 21:08:03,167 INFO [teflo.teflo._print_header:756] 
+
+2021-11-09 21:08:03,167 INFO [teflo.teflo._print_header:757]                                TEFLO RUN (START)                               
+2021-11-09 21:08:03,167 INFO [teflo.teflo._print_header:758] -------------------------------------------------------------------------------
+2021-11-09 21:08:03,168 INFO [teflo.teflo._print_header:759]  * Data Folder           : .teflo/cja42vw096
+2021-11-09 21:08:03,168 INFO [teflo.teflo._print_header:760]  * Workspace             : /home/junqizhang/myWork/teflo_playground/test_remote
+2021-11-09 21:08:03,169 INFO [teflo.teflo._print_header:761]  * Log Level             : debug
+2021-11-09 21:08:03,169 INFO [teflo.teflo._print_header:762]  * Tasks                 : ['provision', 'orchestrate']
+2021-11-09 21:08:03,170 INFO [teflo.teflo._print_header:763]  * Iterate Method        : by_level
+2021-11-09 21:08:03,170 INFO [teflo.teflo._print_header:765]  * Scenario              : sdf from sdf_remote repo
+2021-11-09 21:08:03,171 INFO [teflo.teflo._print_header:765]  * Scenario              : py3_include_provision
+2021-11-09 21:08:03,171 INFO [teflo.teflo._print_header:765]  * Scenario              : sdf using remote include
+2021-11-09 21:08:03,172 INFO [teflo.teflo._print_header:766] -------------------------------------------------------------------------------
+
+2021-11-09 21:08:03,172 INFO [teflo.teflo.run_helper:503] ..................................................
+2021-11-09 21:08:03,172 INFO [teflo.teflo.run_helper:504] [32m'sdf from sdf_remote repo' is running from the scenario file: sdf.yml[0m
+2021-11-09 21:08:03,173 INFO [teflo.teflo.run_helper:506] ..................................................
+2021-11-09 21:08:03,173 INFO [teflo.teflo.notify:615] Sending out any notifications that are registered.
+2021-11-09 21:08:03,174 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:03,174 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: notify
+2021-11-09 21:08:03,175 WARNING [teflo.teflo._run_pipeline:707] ... no tasks to be executed ...
+2021-11-09 21:08:03,175 INFO [teflo.teflo.run_helper:514]  * Task    : provision
+2021-11-09 21:08:03,176 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:03,176 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: provision
+2021-11-09 21:08:03,177 INFO [blaster.blast.blastoff:201] --> Blaster v0.4.0 <--
+2021-11-09 21:08:03,177 INFO [blaster.blast.blastoff:202] Task Execution: Concurrent
+2021-11-09 21:08:03,180 INFO [blaster.blast.blastoff:213] Tasks:
+2021-11-09 21:08:03,180 INFO [blaster.blast.blastoff:216] 1. Task     : REMOTE_include_provisioned_host
+                                Class    : <class 'teflo.tasks.provision.ProvisionTask'>
+                                Methods  : ['run']
+2021-11-09 21:08:03,181 INFO [blaster.blast.blastoff:225] ** BLASTER BEGIN **
+2021-11-09 21:08:03,182 DEBUG [blaster.blast.total_processes:189] Processor count: 1
+2021-11-09 21:08:03,195 DEBUG [blaster.blast.run:56] Processing task: REMOTE_include_provisioned_host
+2021-11-09 21:08:03,196 WARNING [teflo.tasks.provision.__init__:53] Asset REMOTE_include_provisioned_host is static, provision will be skipped.
+2021-11-09 21:08:03,197 DEBUG [blaster.blast.run:74] Running method run
+2021-11-09 21:08:03,201 INFO [blaster.blast.blastoff:278] ** BLASTER COMPLETE **
+2021-11-09 21:08:03,202 INFO [blaster.blast.blastoff:279]     -> TOTAL DURATION: 0h:0m:0s
+2021-11-09 21:08:03,203 INFO [teflo.teflo.run_helper:534] Populating inventory file with host(s) REMOTE_include_provisioned_host
+2021-11-09 21:08:03,207 DEBUG [teflo.core.create_inventory:1560] Master inventory content
+2021-11-09 21:08:03,208 DEBUG [teflo.core.log_inventory_content:1579] 
+[localhost:children]
+REMOTE_include_provisioned_host
+
+[REMOTE_include_provisioned_host]
+127.0.0.1
+
+[REMOTE_include_provisioned_host:vars]
+ansible_connection=local
+
+2021-11-09 21:08:03,209 INFO [teflo.teflo.run_helper:542] ..................................................
+2021-11-09 21:08:03,209 INFO [teflo.teflo.run_helper:514]  * Task    : orchestrate
+2021-11-09 21:08:03,210 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:03,211 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: orchestrate
+2021-11-09 21:08:03,211 INFO [blaster.blast.blastoff:201] --> Blaster v0.4.0 <--
+2021-11-09 21:08:03,212 INFO [blaster.blast.blastoff:202] Task Execution: Sequential
+2021-11-09 21:08:03,212 INFO [blaster.blast.blastoff:213] Tasks:
+2021-11-09 21:08:03,213 INFO [blaster.blast.blastoff:216] 1. Task     : 
+                                Class    : <class 'teflo.tasks.orchestrate.OrchestrateTask'>
+                                Methods  : ['run']
+2021-11-09 21:08:03,213 INFO [blaster.blast.blastoff:225] ** BLASTER BEGIN **
+2021-11-09 21:08:03,214 DEBUG [blaster.blast.run:56] Processing task: 
+2021-11-09 21:08:03,215 DEBUG [blaster.blast.run:74] Running method run
+2021-11-09 21:08:03,215 INFO [teflo.tasks.orchestrate.run:56]    running orchestration  for ['REMOTE_include_provisioned_host']
+2021-11-09 21:08:03,219 INFO [teflo.orchestrators.ext.ansible_orchestrator_plugin.ansible_orchestrator_plugin.__playbook__:144] Executing playbook:
+2021-11-09 21:08:03,219 INFO [teflo.ansible_helpers.build_run_options:357] Ansible options used: {}
+2021-11-09 21:08:03,219 INFO [teflo.ansible_helpers.run_playbook:608] Executing playbook : /home/junqizhang/myWork/teflo_playground/test_remote/.teflo_libraries/remote1/playbook.yml
+2021-11-09 21:08:03,242 INFO [teflo.helpers.can_connect:864] 127.0.0.1
+2021-11-09 21:08:03,242 DEBUG [teflo.ansible_helpers.run_playbook:216] ansible-playbook -i /home/junqizhang/myWork/teflo_playground/test_remote/.teflo/.results/inventory /home/junqizhang/myWork/teflo_playground/test_remote/.teflo_libraries/remote1/playbook.yml -e hosts="'REMOTE_include_provisioned_host'" -e uuid="'qxbsi'" -e hello="'another_test'" -e "{'localhost': True}"  -vvv
+2021-11-09 21:08:03,585 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] ansible-playbook [core 2.11.6]
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] config file = None
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] configured module search path = ['/home/junqizhang/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] ansible python module location = /home/junqizhang/.local/lib/python3.9/site-packages/ansible
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] ansible collection location = /home/junqizhang/.ansible/collections:/usr/share/ansible/collections
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] executable location = /home/junqizhang/.local/bin/ansible-playbook
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] python version = 3.9.7 (default, Aug 30 2021, 00:00:00) [GCC 11.2.1 20210728 (Red Hat 11.2.1-1)]
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] jinja version = 2.11.3
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] libyaml = True
+2021-11-09 21:08:03,586 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] No config file found; using defaults
+2021-11-09 21:08:03,592 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] host_list declined parsing /home/junqizhang/myWork/teflo_playground/test_remote/.teflo/.results/inventory/inventory-cja42vw096 as it did not pass its verify_file() method
+2021-11-09 21:08:03,592 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] script declined parsing /home/junqizhang/myWork/teflo_playground/test_remote/.teflo/.results/inventory/inventory-cja42vw096 as it did not pass its verify_file() method
+2021-11-09 21:08:03,592 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] auto declined parsing /home/junqizhang/myWork/teflo_playground/test_remote/.teflo/.results/inventory/inventory-cja42vw096 as it did not pass its verify_file() method
+2021-11-09 21:08:03,594 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] Parsed /home/junqizhang/myWork/teflo_playground/test_remote/.teflo/.results/inventory/inventory-cja42vw096 inventory source with ini plugin
+2021-11-09 21:08:03,677 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] Skipping callback 'default', as we already have a stdout callback.
+2021-11-09 21:08:03,677 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] Skipping callback 'minimal', as we already have a stdout callback.
+2021-11-09 21:08:03,677 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] Skipping callback 'oneline', as we already have a stdout callback.
+2021-11-09 21:08:03,677 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 
+2021-11-09 21:08:03,677 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] PLAYBOOK: playbook.yml *********************************************************
+2021-11-09 21:08:03,677 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 1 plays in /home/junqizhang/myWork/teflo_playground/test_remote/.teflo_libraries/remote1/playbook.yml
+2021-11-09 21:08:03,681 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 
+2021-11-09 21:08:03,681 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] PLAY [REMOTE_include_provisioned_host] *****************************************
+2021-11-09 21:08:03,693 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 
+2021-11-09 21:08:03,694 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] TASK [Gathering Facts] *********************************************************
+2021-11-09 21:08:03,694 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] task path: /home/junqizhang/myWork/teflo_playground/test_remote/.teflo_libraries/remote1/playbook.yml:2
+2021-11-09 21:08:03,709 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: junqizhang
+2021-11-09 21:08:03,709 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> EXEC /bin/sh -c 'echo ~junqizhang && sleep 0'
+2021-11-09 21:08:03,715 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/junqizhang/.ansible/tmp `"&& mkdir "` echo /home/junqizhang/.ansible/tmp/ansible-tmp-1636510083.7152145-1267397-170263014894656 `" && echo ansible-tmp-1636510083.7152145-1267397-170263014894656="` echo /home/junqizhang/.ansible/tmp/ansible-tmp-1636510083.7152145-1267397-170263014894656 `" ) && sleep 0'
+2021-11-09 21:08:03,928 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> Attempting python interpreter discovery
+2021-11-09 21:08:03,928 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> EXEC /bin/sh -c 'echo PLATFORM; uname; echo FOUND; command -v '"'"'/usr/bin/python'"'"'; command -v '"'"'python3.9'"'"'; command -v '"'"'python3.8'"'"'; command -v '"'"'python3.7'"'"'; command -v '"'"'python3.6'"'"'; command -v '"'"'python3.5'"'"'; command -v '"'"'python2.7'"'"'; command -v '"'"'python2.6'"'"'; command -v '"'"'/usr/libexec/platform-python'"'"'; command -v '"'"'/usr/bin/python3'"'"'; command -v '"'"'python'"'"'; echo ENDFOUND && sleep 0'
+2021-11-09 21:08:03,939 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> EXEC /bin/sh -c '/usr/bin/python && sleep 0'
+2021-11-09 21:08:03,990 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] Using module file /home/junqizhang/.local/lib/python3.9/site-packages/ansible/modules/setup.py
+2021-11-09 21:08:03,991 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> PUT /home/junqizhang/.ansible/tmp/ansible-local-1267393qpyibial/tmpf8n8o9zx TO /home/junqizhang/.ansible/tmp/ansible-tmp-1636510083.7152145-1267397-170263014894656/AnsiballZ_setup.py
+2021-11-09 21:08:03,991 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/junqizhang/.ansible/tmp/ansible-tmp-1636510083.7152145-1267397-170263014894656/ /home/junqizhang/.ansible/tmp/ansible-tmp-1636510083.7152145-1267397-170263014894656/AnsiballZ_setup.py && sleep 0'
+2021-11-09 21:08:03,998 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> EXEC /bin/sh -c '/usr/bin/python /home/junqizhang/.ansible/tmp/ansible-tmp-1636510083.7152145-1267397-170263014894656/AnsiballZ_setup.py && sleep 0'
+2021-11-09 21:08:04,613 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/junqizhang/.ansible/tmp/ansible-tmp-1636510083.7152145-1267397-170263014894656/ > /dev/null 2>&1 && sleep 0'
+2021-11-09 21:08:04,639 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] ok: [127.0.0.1]
+2021-11-09 21:08:04,647 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] META: ran handlers
+2021-11-09 21:08:04,655 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 
+2021-11-09 21:08:04,655 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] TASK [remove an instance] ******************************************************
+2021-11-09 21:08:04,655 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] task path: /home/junqizhang/myWork/teflo_playground/test_remote/.teflo_libraries/remote1/playbook.yml:4
+2021-11-09 21:08:04,671 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] ok: [127.0.0.1] => {
+2021-11-09 21:08:04,671 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] "msg": "another_test"
+2021-11-09 21:08:04,671 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] }
+2021-11-09 21:08:04,680 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] META: ran handlers
+2021-11-09 21:08:04,688 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] META: ran handlers
+2021-11-09 21:08:04,689 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 
+2021-11-09 21:08:04,689 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] PLAY RECAP *********************************************************************
+2021-11-09 21:08:04,689 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 127.0.0.1                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+2021-11-09 21:08:04,689 INFO [teflo.ansible_helpers.exec_local_cmd_pipe:568] 
+2021-11-09 21:08:04,769 INFO [teflo.orchestrators.ext.ansible_orchestrator_plugin.ansible_orchestrator_plugin.__playbook__:153] Successfully completed playbook : /home/junqizhang/myWork/teflo_playground/test_remote/.teflo_libraries/remote1/playbook.yml
+2021-11-09 21:08:04,770 DEBUG [teflo.orchestrators.ext.ansible_orchestrator_plugin.ansible_orchestrator_plugin.run:206] Successful completion of orchestrate task  with return value 0
+2021-11-09 21:08:04,844 DEBUG [teflo.ansible_helpers.alog_update:566] The ansible log file being used is : None
+2021-11-09 21:08:04,845 INFO [teflo.orchestrators.action_orchestrator.run:86] Orchestration passed : Successfully completed orchestrate action: .
+2021-11-09 21:08:04,845 INFO [blaster.blast.blastoff:278] ** BLASTER COMPLETE **
+2021-11-09 21:08:04,846 INFO [blaster.blast.blastoff:279]     -> TOTAL DURATION: 0h:0m:1s
+2021-11-09 21:08:04,847 INFO [teflo.teflo.run_helper:542] ..................................................
+2021-11-09 21:08:04,847 INFO [teflo.teflo.notify:615] Sending out any notifications that are registered.
+2021-11-09 21:08:04,849 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:04,849 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: notify
+2021-11-09 21:08:04,850 WARNING [teflo.teflo._run_pipeline:707] ... no tasks to be executed ...
+2021-11-09 21:08:04,851 INFO [teflo.teflo.run_helper:503] ..................................................
+2021-11-09 21:08:04,852 INFO [teflo.teflo.run_helper:504] [32m'py3_include_provision' is running from the scenario file: sdf_remote.yml[0m
+2021-11-09 21:08:04,852 INFO [teflo.teflo.run_helper:506] ..................................................
+2021-11-09 21:08:04,853 INFO [teflo.teflo.notify:615] Sending out any notifications that are registered.
+2021-11-09 21:08:04,855 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:04,855 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: notify
+2021-11-09 21:08:04,856 WARNING [teflo.teflo._run_pipeline:707] ... no tasks to be executed ...
+2021-11-09 21:08:04,856 INFO [teflo.teflo.run_helper:514]  * Task    : provision
+2021-11-09 21:08:04,858 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:04,859 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: provision
+2021-11-09 21:08:04,860 INFO [blaster.blast.blastoff:201] --> Blaster v0.4.0 <--
+2021-11-09 21:08:04,861 INFO [blaster.blast.blastoff:202] Task Execution: Concurrent
+2021-11-09 21:08:04,862 INFO [blaster.blast.blastoff:213] Tasks:
+2021-11-09 21:08:04,863 INFO [blaster.blast.blastoff:216] 1. Task     : hello_im_remote_lib_provisioned_host
+                                Class    : <class 'teflo.tasks.provision.ProvisionTask'>
+                                Methods  : ['run']
+2021-11-09 21:08:04,865 INFO [blaster.blast.blastoff:225] ** BLASTER BEGIN **
+2021-11-09 21:08:04,866 DEBUG [blaster.blast.total_processes:189] Processor count: 1
+2021-11-09 21:08:04,875 DEBUG [blaster.blast.run:56] Processing task: hello_im_remote_lib_provisioned_host
+2021-11-09 21:08:04,876 WARNING [teflo.tasks.provision.__init__:53] Asset hello_im_remote_lib_provisioned_host is static, provision will be skipped.
+2021-11-09 21:08:04,877 DEBUG [blaster.blast.run:74] Running method run
+2021-11-09 21:08:04,880 INFO [blaster.blast.blastoff:278] ** BLASTER COMPLETE **
+2021-11-09 21:08:04,880 INFO [blaster.blast.blastoff:279]     -> TOTAL DURATION: 0h:0m:0s
+2021-11-09 21:08:04,881 INFO [teflo.teflo.run_helper:534] Populating inventory file with host(s) hello_im_remote_lib_provisioned_host
+2021-11-09 21:08:04,884 DEBUG [teflo.core.create_inventory:1560] Master inventory content
+2021-11-09 21:08:04,885 DEBUG [teflo.core.log_inventory_content:1579] 
+[localhost:children]
+REMOTE_include_provisioned_host
+hello_im_remote_lib_provisioned_host
+
+[REMOTE_include_provisioned_host]
+127.0.0.1
+
+[REMOTE_include_provisioned_host:vars]
+ansible_connection=local
+
+[hello_im_remote_lib_provisioned_host]
+127.0.0.1
+
+[hello_im_remote_lib_provisioned_host:vars]
+ansible_connection=local
+
+2021-11-09 21:08:04,886 INFO [teflo.teflo.run_helper:542] ..................................................
+2021-11-09 21:08:04,886 INFO [teflo.teflo.run_helper:514]  * Task    : orchestrate
+2021-11-09 21:08:04,888 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:04,889 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: orchestrate
+2021-11-09 21:08:04,889 INFO [blaster.blast.blastoff:201] --> Blaster v0.4.0 <--
+2021-11-09 21:08:04,890 INFO [blaster.blast.blastoff:202] Task Execution: Sequential
+2021-11-09 21:08:04,891 INFO [blaster.blast.blastoff:213] Tasks:
+2021-11-09 21:08:04,891 INFO [blaster.blast.blastoff:216] 1. Task     : This is an orchestrate fromsdf_remote
+                                Class    : <class 'teflo.tasks.orchestrate.OrchestrateTask'>
+                                Methods  : ['run']
+2021-11-09 21:08:04,892 INFO [blaster.blast.blastoff:225] ** BLASTER BEGIN **
+2021-11-09 21:08:04,893 DEBUG [blaster.blast.run:56] Processing task: This is an orchestrate fromsdf_remote
+2021-11-09 21:08:04,895 DEBUG [blaster.blast.run:74] Running method run
+2021-11-09 21:08:04,896 INFO [teflo.tasks.orchestrate.run:56]    running orchestration This is an orchestrate fromsdf_remote for ['localhost']
+2021-11-09 21:08:04,896 INFO [teflo.orchestrators.ext.ansible_orchestrator_plugin.ansible_orchestrator_plugin.__script__:156] Executing script:
+2021-11-09 21:08:04,897 INFO [teflo.ansible_helpers.run_script_playbook:756] Executing script test.sh:
+2021-11-09 21:08:04,897 INFO [teflo.ansible_helpers.build_run_options:357] Ansible options used: {}
+2021-11-09 21:08:04,912 INFO [teflo.ansible_helpers.run_playbook:608] Executing playbook : cbn_execute_script_re7g1.yml
+2021-11-09 21:08:04,915 ERROR [teflo.orchestrators.ext.ansible_orchestrator_plugin.ansible_orchestrator_plugin.run:211] Orchestration failed : [31mERROR: Unexpected error - Group from_local_parent, REMOTE_include_provisioned_host, hello_im_remote_lib_provisioned_host not found in inventory file![0m
+2021-11-09 21:08:04,949 DEBUG [teflo.ansible_helpers.alog_update:566] The ansible log file being used is : None
+2021-11-09 21:08:04,950 ERROR [teflo.tasks.orchestrate.run:61] Failed to run orchestration This is an orchestrate fromsdf_remote 
+2021-11-09 21:08:04,951 ERROR [teflo.tasks.orchestrate.run:63] [31mOrchestration failed : Failed to perform  This is an orchestrate fromsdf_remote[0m
+2021-11-09 21:08:04,951 ERROR [teflo.tasks.orchestrate.run:64] Traceback (most recent call last):
+  File "/home/junqizhang/.local/lib/python3.9/site-packages/teflo/tasks/orchestrate.py", line 59, in run
+    self.orchestrator.run()
+  File "/home/junqizhang/.local/lib/python3.9/site-packages/teflo/orchestrators/action_orchestrator.py", line 90, in run
+    raise TefloOrchestratorError("Orchestration failed : Failed to perform  %s" % self.plugin.action_name)
+teflo.exceptions.TefloOrchestratorError: [31mOrchestration failed : Failed to perform  This is an orchestrate fromsdf_remote[0m
+
+2021-11-09 21:08:04,952 ERROR [blaster.blast.run:90] A exception was raised while processing task: This is an orchestrate fromsdf_remote method: run
+2021-11-09 21:08:05,955 INFO [blaster.blast.blastoff:278] ** BLASTER COMPLETE **
+2021-11-09 21:08:05,958 INFO [blaster.blast.blastoff:279]     -> TOTAL DURATION: 0h:0m:1s
+2021-11-09 21:08:05,959 ERROR [teflo.teflo.run_helper:553] One or more tasks got a status of non zero.
+2021-11-09 21:08:05,960 INFO [teflo.teflo.notify:615] Sending out any notifications that are registered.
+2021-11-09 21:08:05,962 INFO [teflo.teflo._run_pipeline:702] ..................................................
+2021-11-09 21:08:05,963 INFO [teflo.teflo._run_pipeline:703] Starting tasks on pipeline: notify
+2021-11-09 21:08:05,964 WARNING [teflo.teflo._run_pipeline:707] ... no tasks to be executed ...
+2021-11-09 21:08:05,964 ERROR [teflo.teflo.run_all_helper:396] [31mScenario `py3_include_provision` failed during the Teflo run[0m
+2021-11-09 21:08:05,997 INFO [teflo.teflo._print_footer:792] 
+
+2021-11-09 21:08:05,998 INFO [teflo.teflo._print_footer:793]                                SCENARIO RUN (END)                              
+2021-11-09 21:08:05,998 INFO [teflo.teflo._print_footer:794] -------------------------------------------------------------------------------
+2021-11-09 21:08:05,998 INFO [teflo.teflo._print_footer:795]  * Duration                       : 0h:0m:2s
+2021-11-09 21:08:05,999 INFO [teflo.teflo._print_footer:798]  * Passed Tasks                   : ['provision']
+2021-11-09 21:08:05,999 INFO [teflo.teflo._print_footer:801]  * Failed Tasks                   : ['orchestrate']
+2021-11-09 21:08:06,000 INFO [teflo.teflo._print_footer:803]  * Results Folder                 : .teflo/.results
+2021-11-09 21:08:06,000 INFO [teflo.teflo._print_footer:805]  * Iterate Method                 : by_level
+2021-11-09 21:08:06,001 INFO [teflo.teflo._print_footer:808]  * Scenario Definition            : sdf from sdf_remote repo
+2021-11-09 21:08:06,001 INFO [teflo.teflo._print_footer:808]  * Scenario Definition            : py3_include_provision
+2021-11-09 21:08:06,002 INFO [teflo.teflo._print_footer:808]  * Scenario Definition            : sdf using remote include
+2021-11-09 21:08:06,002 INFO [teflo.teflo._print_footer:809]  * Final Scenario Definition      : .teflo/.results/results.yml
+2021-11-09 21:08:06,002 INFO [teflo.teflo._print_footer:810] -------------------------------------------------------------------------------
+2021-11-09 21:08:06,003 INFO [teflo.teflo._print_footer:811] TEFLO RUN (RESULT=FAILED)

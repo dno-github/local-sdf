@@ -1,0 +1,23 @@
+[localhost:children]
+REMOTE_include_provisioned_host
+hello_im_remote_lib_provisioned_host
+from_local_parent
+
+[REMOTE_include_provisioned_host]
+127.0.0.1
+
+[REMOTE_include_provisioned_host:vars]
+ansible_connection = local
+
+[hello_im_remote_lib_provisioned_host]
+127.0.0.1
+
+[hello_im_remote_lib_provisioned_host:vars]
+ansible_connection = local
+
+[from_local_parent]
+127.0.0.1
+
+[from_local_parent:vars]
+ansible_connection = local
+

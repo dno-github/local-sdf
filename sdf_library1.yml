@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+---
+library:
+  - "git@github.com:dno-github/remote-teflo-lib1.git as remote"
+
+include:
+  - "remote/sdf_remote.yml"
+
+name: sdf using remote include
+description: "Provision step"
+
+provision:
+  - name: from_local_parent
+    groups: localhost
+    ip_address: 127.0.0.1
+    ansible_params:
+      ansible_connection: local
+

@@ -1,0 +1,31 @@
+name: py3_include_provision
+description: Provision step
+library:
+- git@github.com:dno-github/remote-teflo-lib3.git as remote1
+include:
+- .teflo/.results/sdf_results.yml
+resource_check: {}
+provision:
+- name: hello_im_remote_lib_provisioned_host
+  groups:
+  - localhost
+  ip_address: 127.0.0.1
+  ansible_params:
+    ansible_connection: local
+  labels: []
+orchestrate:
+- name: This is an orchestrate fromsdf_remote
+  description: Test teflo
+  orchestrator: ansible
+  hosts:
+  - from_local_parent
+  - REMOTE_include_provisioned_host
+  - hello_im_remote_lib_provisioned_host
+  ansible_script:
+    name: test.sh
+  labels: []
+  status: 1
+execute: []
+report: []
+notifications: []
+overall_status: 1

@@ -1,0 +1,29 @@
+name: sdf from sdf_remote repo
+description: Provision step
+library: []
+resource_check: {}
+provision:
+- name: REMOTE_include_provisioned_host
+  groups:
+  - localhost
+  ip_address: 127.0.0.1
+  ansible_params:
+    ansible_connection: local
+  labels: []
+orchestrate:
+- name: ''
+  description: Test teflo
+  orchestrator: ansible
+  hosts:
+  - REMOTE_include_provisioned_host
+  ansible_playbook:
+    name: /home/junqizhang/myWork/teflo_playground/test_remote/.teflo_libraries/remote1/playbook.yml
+  ansible_options:
+    extra_vars:
+      hello: another_test
+  labels: []
+  status: 0
+execute: []
+report: []
+notifications: []
+overall_status: 0

@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+---
+name: sdf using remote include
+description: "Provision step"
+
+provision:
+  - name: static
+    groups: localhost
+    ip_address: 127.0.0.1
+    ansible_params:
+      ansible_connection: local
+
+orchestrate:
+  - name: "This is an orchestrate fromsdf_remote"
+    description: "Test teflo" 
+    orchestrator: ansible
+    hosts: static
+    ansible_script:
+      name: ./test.sh
+
